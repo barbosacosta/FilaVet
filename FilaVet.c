@@ -45,12 +45,12 @@ int inserir(FilaVet* fila, int item) {
     return OK;
 }
 
-int remover(FilaVet* fila, int* item) {
+int removerElemento(FilaVet* fila) {
     if (fila == NULL)
         return ESTRUTURA_NAO_INICIALIZADA;
     if (estahVazia(fila))
         return ESTRUTURA_VAZIA;
-    *item = fila->itens[fila->inicio];
+   // *item = fila->itens[fila->inicio];
     fila->inicio = incrementa(fila->inicio);
     return OK;
 }

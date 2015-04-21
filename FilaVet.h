@@ -19,6 +19,6 @@ FilaVet* criarFila();
 int estahVazia(FilaVet* fila);
 int estahCheia(FilaVet* fila);
 int inserir(FilaVet* fila, int item);
-int remover(FilaVet* fila, int* item);
+int removerElemento(FilaVet* fila);
 int obterInicio(FilaVet* fila, int* item);
 int liberarFila(FilaVet* fila);
