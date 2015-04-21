@@ -6,7 +6,7 @@ int incrementa(int i) {
   else return i + 1;
 }
 int decrementa(int i) {
-  if (i == TAM_MAX - 1) return 0;
+  if (i == 0) return TAM_MAX - 1;
   else return i - 1;
 }
 
@@ -73,7 +73,7 @@ int inserirNoInicio(FilaVet* fila,int item);
         return ESTRUTURA_NAO_INICIALIZADA;
     if (estahCheia(fila))
         return ESTRUTURA_CHEIA;
-    fila->itens[fila->inicio - 1] = item;
+    fila->itens[fila->inicio ] = item;
     fila->inicio = decrementa(fila->inicio);
     return OK;
 }
@@ -92,7 +92,9 @@ int obterUltimo(FilaVet* fila, int* item) {
         return ESTRUTURA_NAO_INICIALIZADA;
     if (estahVazia(fila))
         return ESTRUTURA_VAZIA;
-    *item = fila->itens[fila->fim];
+    int retira = decrementa(fila->fim);
+    *item = fila->itens[retira];
+    return item;
     return OK;
 }
 

@@ -11,7 +11,7 @@
 typedef struct {
     int itens[TAM_MAX];
     int inicio;
-    int fim
+    int fim;
 } FilaVet;
 
 
