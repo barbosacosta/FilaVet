@@ -5,6 +5,10 @@ int incrementa(int i) {
   if (i == TAM_MAX - 1) return 0;
   else return i + 1;
 }
+int decrementa(int i) {
+  if (i == TAM_MAX - 1) return 0;
+  else return i - 1;
+}
 
 FilaVet* criarFila() {
     FilaVet* fila = malloc(sizeof(*fila));
@@ -54,7 +58,6 @@ int remover(FilaVet* fila, int* item) {
     fila->inicio = incrementa(fila->inicio);
     return OK;
 }
-
 int obterInicio(FilaVet* fila, int* item) {
     if (fila == NULL)
         return ESTRUTURA_NAO_INICIALIZADA;
@@ -63,3 +66,34 @@ int obterInicio(FilaVet* fila, int* item) {
     *item = fila->itens[fila->inicio];
     return OK;
 }
+// duvida aqui//
+int inserirNoInicio(FilaVet* fila,int item);
+ {
+    if (fila == NULL)
+        return ESTRUTURA_NAO_INICIALIZADA;
+    if (estahCheia(fila))
+        return ESTRUTURA_CHEIA;
+    fila->itens[fila->inicio - 1] = item;
+    fila->inicio = decrementa(fila->inicio);
+    return OK;
+}
+
+int removerDoFim(FilaVet* fila, int* item) {
+    if (fila == NULL)
+        return ESTRUTURA_NAO_INICIALIZADA;
+    if (estahVazia(fila))
+        return ESTRUTURA_VAZIA;
+    *item = fila->itens[fila->fim];
+    fila->fim = decrementa(fila->fim);
+    return OK;
+}
+int obterUltimo(FilaVet* fila, int* item) {
+    if (fila == NULL)
+        return ESTRUTURA_NAO_INICIALIZADA;
+    if (estahVazia(fila))
+        return ESTRUTURA_VAZIA;
+    *item = fila->itens[fila->fim];
+    return OK;
+}
+
+

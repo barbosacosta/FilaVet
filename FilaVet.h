@@ -22,3 +22,7 @@ int inserir(FilaVet* fila, int item);
 int remover(FilaVet* fila, int* item);
 int obterInicio(FilaVet* fila, int* item);
 int liberarFila(FilaVet* fila);
+//mudancas aqui//
+int inserirNoInicio(FilaVet* fila,int item);
+int removerDoFim(FilaVet* fila,int* item);
+int obterUltimo(FilaVet*fila,int* item);
